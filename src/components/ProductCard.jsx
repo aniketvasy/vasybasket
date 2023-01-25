@@ -55,7 +55,8 @@ const ProductCard = ({ id, title, price, category, description, image }) => {
           <span className="product-qty-box">{productCount}</span>
           <div className="add-product-icon-box add-and-remove-icon" onClick={()=>dispatch(addProduct ({
           id:id,
-          title:title
+          title:title,
+          price:price
         }))}><HiPlus className="remove-product-icon"/></div>
          
           
@@ -63,7 +64,8 @@ const ProductCard = ({ id, title, price, category, description, image }) => {
         :
          <button className="product-buy-button " onClick={()=>dispatch(addProduct({
           id:id,
-          title:title
+          title:title,
+          price:price
         }))}> Add </button>
       }
      

@@ -4,7 +4,7 @@ const topBarLoadingSlice = createSlice({
   name: "topBarLoading",
   initialState: {
     progress:0,
-    dataSaved:false
+    dataFetched:false
   },
   reducers: {
     setProgress(state, action) {
@@ -12,7 +12,7 @@ const topBarLoadingSlice = createSlice({
         return{
           ...state,
           progress:action.payload.progress,
-          dataSaved:action.payload.dataSaved
+          dataFetched:action.payload.dataFetched
         }
     },
   },

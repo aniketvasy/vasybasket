@@ -7,14 +7,14 @@ import { useSelector } from "react-redux";
 
 
 
-const ProductList = () => {
+const ProductList = ({category}) => {
   const [ProductListComponent, setProductListComponent] = useState([]);
   const products = useSelector((state)=>state.products);
 
 
   useEffect(()=>{
     console.log("products inside",products)
-    setProductListComponent(products.filter((item)=>item.category=="men's clothing"||item.category=="women's clothing").map((item)=>{
+    setProductListComponent(products.filter((item)=>item.category==category[0]||item.category==category[1]).map((item)=>{
       console.log("product",item);
       return(
           <ProductCard

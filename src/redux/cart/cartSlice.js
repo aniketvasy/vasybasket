@@ -14,7 +14,6 @@ const cartSlice = createSlice({
         productIsFound = state.find(
           (cartProduct) => cartProduct.id == action.payload.id
         );
-        // console.log("action product0000000", productIsFound);
       }
 
       if (productIsFound) {
@@ -46,7 +45,6 @@ const cartSlice = createSlice({
         productIsFound = state.find(
           (cartProduct) => cartProduct.id == action.payload.id
         );
-        // console.log("action product0000000", productIsFound);
       }
 
       if (productIsFound) {
@@ -67,13 +65,6 @@ const cartSlice = createSlice({
       } else {
         return state;
       }
-
-      // else{
-      //     state.push({
-      //         ...action.payload,
-      //         qty:1
-      //      });
-      // }
     }
     
   },

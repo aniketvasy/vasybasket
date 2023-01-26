@@ -8,7 +8,6 @@ const topBarLoadingSlice = createSlice({
   },
   reducers: {
     setProgress(state, action) {
-      // alert(action.payload.progress)
         return{
           ...state,
           progress:action.payload.progress,

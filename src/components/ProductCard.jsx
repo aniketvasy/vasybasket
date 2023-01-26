@@ -11,29 +11,21 @@ const ProductCard = ({ id, title, price, category, description, image }) => {
   const [productCount,setProductCount] = useState(0);
 
   useEffect(()=>{
-    // console.log("cart",cart);
     if(cart.length>0){
-    //  alert("hi")
       const thisProductInCart = cart.find((cartProduct)=>{
        
         if(cartProduct.id==id){
-          // console.log("cart Id",cartProduct.id);
           return true
         }
         else{
           return false
         }
       })
-      // console.log("this product = >", thisProductInCart);
       thisProductInCart?setProductCount(thisProductInCart.qty):setProductCount(0);
     }else{
       setProductCount(0)
-      // console.log("cart is empty")
     }
-    // console.log("product count",cart)
   },[cart])
-
-  
 
   return <div className="product-card">
     <div className="product-card-image-compo">
@@ -58,8 +50,6 @@ const ProductCard = ({ id, title, price, category, description, image }) => {
           title:title,
           price:price
         }))}><HiPlus className="remove-product-icon"/></div>
-         
-          
         </div>
         :
          <button className="product-buy-button " onClick={()=>dispatch(addProduct({

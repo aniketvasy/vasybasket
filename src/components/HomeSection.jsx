@@ -1,4 +1,7 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import Skeleton from "react-loading-skeleton";
+import 'react-loading-skeleton/dist/skeleton.css';
 import styled from "styled-components";
 
 const HomeSectionComponent = styled.div`
@@ -25,9 +28,11 @@ line-height: 32px;
 `;
 
 const HomeSection = ({ children , heading}) => {
+  const loading = useSelector((state) => state.loading);
+
   return <HomeSectionComponent>
     <SectionHeading>
-      {heading}
+     {loading.dataFetched?heading:<Skeleton height={30} width={290}/>}
     </SectionHeading>
     {children}
     </HomeSectionComponent>;

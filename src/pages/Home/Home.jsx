@@ -5,7 +5,7 @@ import HomeSection from '../../components/HomeSection'
 import ProductList from '../../components/ProductList'
 import { saveProducts } from '../../redux/products/productsSlice'
 import { setProgress } from "../../redux/loading/topBarLoadingSlice";
-import HashLoader  from "react-spinners/HashLoader ";
+import ProductCardSkeletonComponent from "../../components/skeletonComponents/ProductCardSkeletonComponent"
 
 const Home = () => {
 const products = useSelector((state)=>state.products);
@@ -37,16 +37,16 @@ const dispatch = useDispatch();
     };
     getProductList()
   }, []);
-
+ 
 
 
   return (
     <>
     <HomeSection heading={"Men's & Women's clothing"}>
-   {loading.dataFetched?<ProductList category={["men's clothing","women's clothing"]}/>:<div className="loading-home-page"><HashLoader color="#00A81C" /></div>} 
+   {loading.dataFetched?<ProductList category={["men's clothing","women's clothing"]}/>:<ProductCardSkeletonComponent count={10}/>} 
     </HomeSection>
     <HomeSection heading={"Clothings"}>
-   {loading.dataFetched?<ProductList category={["jewelery","electronics"]} />:<div className="loading-home-page"><HashLoader color="#00A81C" /></div>} 
+   {loading.dataFetched?<ProductList category={["jewelery","electronics"]} />:<ProductCardSkeletonComponent count={10}/>} 
     </HomeSection>
     </>
   )

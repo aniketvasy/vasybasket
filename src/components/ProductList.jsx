@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
-import { useQuery } from "react-query";
-import axios from "axios";
-import { useRef } from "react";
 import { useSelector } from "react-redux";
-
-
 
 const ProductList = ({category}) => {
   const [ProductListComponent, setProductListComponent] = useState([]);
   const products = useSelector((state)=>state.products);
-
 
   useEffect(()=>{
     console.log("products inside",products)
@@ -25,7 +19,7 @@ const ProductList = ({category}) => {
           category= {item.category}
           description= {item.description}
           image= {item.image}
-          qty={0}                        ///////////// setting 0 QTY 
+          qty={0}                 
           />
       )
   })) 

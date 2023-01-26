@@ -17,16 +17,14 @@ const Navbar = () => {
   return (
     <>
       <LoadingBar
-        color="#f11946"
+        color="#0C831F"
         progress={loading.progress}
-        // onLoaderFinished={() => setProgress()}
       />
       <div className="navbar">
        <NavbarLogo/>
        <SearchBox/>
        <CartIconComponent/>
       </div>
-
       <Outlet />
     </>
   );
